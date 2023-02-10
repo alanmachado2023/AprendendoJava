@@ -8,7 +8,7 @@ public class DiasDaSemana {
 
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Digite um número de 1 a 7");
+		System.out.println("Digite um número de 1 a 7 para saber o dia da semana: ");
 		int x = sc.nextInt();
 		String dia;
 		
