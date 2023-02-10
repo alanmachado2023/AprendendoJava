@@ -44,7 +44,7 @@ public class DiasDaSemana {
 		System.out.println("Digite um número de 1 a 7 para indicar o dia da semana ou 0 para encerrar: ");
 			x = sc.nextInt();
 		}
-
+		System.out.println("A aplicação encerrou.");
 		
 		sc.close();
 		
