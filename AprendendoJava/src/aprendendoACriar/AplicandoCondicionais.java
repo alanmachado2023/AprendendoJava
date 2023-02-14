@@ -12,7 +12,7 @@ public class AplicandoCondicionais {
 				
 		preco = 50.0;
 				
-		System.out.println("Quantos minutos foram consumidos?"); //O preço muda ao passar de 50 reais
+		System.out.println("Quantos minutos foram consumidos?"); //O preço muda ao passar de 100 minutos
 		minutos = sc.nextInt();
 		
 			if (minutos > 100){
