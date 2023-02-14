@@ -14,27 +14,41 @@ public class QuadranteCartesiano_If_Else {
 		System.out.println("Digite a coordenada y: ");
 		int y = sc.nextInt();
 		
-		while (x != 0 && y != 0) {
-			if (x > 0 && y > 0) {
-				System.out.println("Primeiro");
+		while (x != 0 || y != 0) {                  //O programa encerrará quando x=0 e y=o
+			if (x == 0 && y > 0) {
+				System.out.println("Semi eixo 'y' positivo");
 			}
-			else if (x < 0 && y > 0) {
-					System.out.println("Segundo");
+			else if (x == 0 && y < 0) {
+				System.out.println("Semi eixo 'y' negativo");
 			}
-			else if (x < 0 && y < 0) {
-					System.out.println("Terceiro");
+			else if (x > 0 && y == 0) {
+				System.out.println("Semi eixo 'x' positivo");
+			}
+			else if (x < 0 && y == 0) {
+				System.out.println("Semi eixo 'x' negativo");
+			}
+			else if (x >= 0 && y >= 0) {
+				System.out.println("Primeiro Quadrante");
+			}
+			else if (x <= 0 && y >= 0) {
+					System.out.println("Segundo Quadrante");
+			}
+			else if (x <= 0 && y <= 0) {
+					System.out.println("Terceiro Quadrante");
 			}
 			else {
-					System.out.println("Quarto");
+					System.out.println("Quarto Quadrante");
 			}
-			System.out.println("Digite a coordenada x: ");
-			x = sc.nextInt();	
-			System.out.println("Digite a coordenada y: ");
-			y = sc.nextInt();
 			
+			System.out.println();
+			System.out.println("Digite outra coordenada x ou 0 para encerrar: ");
+			x = sc.nextInt();	
+			System.out.println("Digite outra coordenada y ou 0 para encerrar: ");
+			y = sc.nextInt();
+			}
+			
+		System.out.println("Fim! Obrigado e até a próxima");
 			sc.close();
 		}
-
-	}
 
 }
