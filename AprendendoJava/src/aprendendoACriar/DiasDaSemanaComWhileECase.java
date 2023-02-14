@@ -2,7 +2,7 @@ package aprendendoACriar;
 
 import java.util.Scanner;
 
-public class DiasDaSemana {
+public class DiasDaSemanaComWhileECase {
 
 	public static void main(String[] args) {
 

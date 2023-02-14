@@ -2,7 +2,7 @@ package aprendendoACriar;
 
 import java.util.Scanner;
 
-public class PostoDeCombustivel {
+public class PostoDeCombustivel_While_If_Case {
 
 	public static void main(String[] args) {
 		

@@ -2,7 +2,7 @@ package aprendendoACriar;
 
 import java.util.Scanner;
 
-public class QuadranteCartesiano {
+public class QuadranteCartesiano_If_Else {
 
 	public static void main(String[] args) {
 

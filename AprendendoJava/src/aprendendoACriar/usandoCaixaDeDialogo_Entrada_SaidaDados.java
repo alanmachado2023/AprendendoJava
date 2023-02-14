@@ -2,7 +2,7 @@ package aprendendoACriar;
 
 import javax.swing.JOptionPane;
 
-public class usandoCaixaDeDialogo {
+public class usandoCaixaDeDialogo_Entrada_SaidaDados {
 
 	public static void main(String[] args) {
 		

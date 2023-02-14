@@ -2,7 +2,7 @@ package aprendendoACriar;
 
 import java.util.Scanner;
 
-public class Condicionais {
+public class AplicandoCondicionais {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);	
