@@ -16,16 +16,16 @@ public class QuadranteCartesiano_If_Else {
 		
 		while (x != 0 || y != 0) {                  //O programa encerrará quando x=0 e y=o
 			if (x == 0 && y > 0) {
-				System.out.println("Semi eixo 'y' positivo");
+				System.out.println("Semi-eixo 'y' positivo");
 			}
 			else if (x == 0 && y < 0) {
-				System.out.println("Semi eixo 'y' negativo");
+				System.out.println("Semi-eixo 'y' negativo");
 			}
 			else if (x > 0 && y == 0) {
-				System.out.println("Semi eixo 'x' positivo");
+				System.out.println("Semi-eixo 'x' positivo");
 			}
 			else if (x < 0 && y == 0) {
-				System.out.println("Semi eixo 'x' negativo");
+				System.out.println("Semi-eixo 'x' negativo");
 			}
 			else if (x >= 0 && y >= 0) {
 				System.out.println("Primeiro Quadrante");
