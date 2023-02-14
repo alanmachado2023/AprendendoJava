@@ -6,6 +6,7 @@ public class QuadranteCartesiano_If_Else {
 
 	public static void main(String[] args) {
 
+		/*O programa mostra em qual quadrante cartesiano a coordenada "xy" se encontra, ou se será em cima de um dos eixos*/
 		
 		Scanner sc = new Scanner(System.in);
 		

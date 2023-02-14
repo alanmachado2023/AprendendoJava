@@ -13,7 +13,7 @@ public class DiasDaSemanaComWhileECase {
 		String dia;
 		
 		while (x!=0) {
-			switch (x) {
+			switch (x) {        // analisa o valor de "x" para usar nos "case"
 		case 1:
 			dia = "Domingo";
 			break;
@@ -35,7 +35,7 @@ public class DiasDaSemanaComWhileECase {
 		case 7:
 			dia = "Sábado";
 			break;
-		default:
+		default:        //Para valores diferentes do "case"
 			dia = "Valor inválido";
 			break;
 		}

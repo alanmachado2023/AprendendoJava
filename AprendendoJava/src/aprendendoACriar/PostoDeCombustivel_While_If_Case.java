@@ -6,6 +6,7 @@ public class PostoDeCombustivel_While_If_Case {
 
 	public static void main(String[] args) {
 		
+/*O programa calcula o total de abastecimentos de cada tipo de combustível*/
 		
 		Scanner sc = new Scanner(System.in);
 
@@ -15,15 +16,15 @@ public class PostoDeCombustivel_While_If_Case {
 
 
 			while (codigo != 4) {
-				if (codigo > 0 && codigo < 4) {
+				if (codigo > 0 && codigo < 4) {   //Limita os valores válidos entre 1 e 4 
 				switch (codigo) {
-				case 1:
+				case 1:                     
 					alcool += 1;
 					break;
 				case 2:
-					gasolina += 1;
+					gasolina += 1;        //analisa a variável "código" para cada "case" específico e incrementa com +1
 					break;
-				case 3:
+				case 3:					  //É uma estrutura "switch-case", dentro da condicional "if-else", dentro da estrutura de repetição "while"
 					diesel += 1;
 					break;
 				}
@@ -31,7 +32,7 @@ public class PostoDeCombustivel_While_If_Case {
 				codigo = sc.nextInt();
 				}
 				else {
-					System.out.println("Código inválido");
+					System.out.println("Código inválido");  
 					codigo = sc.nextInt();
 					
 				}
