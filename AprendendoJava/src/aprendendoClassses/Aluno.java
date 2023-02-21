@@ -7,8 +7,8 @@ import java.util.List;
 /*Classe/Objeto Aluno*/
 
 public class Aluno {
-	
-	/*Esses são os atributos do objeto aluno*/
+
+	/* Esses são os atributos do objeto aluno */
 	private String nome;
 	private int idade;
 	private String dataNascimento;
@@ -19,26 +19,22 @@ public class Aluno {
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
-	
-	private List<Disciplinas> disciplinas = new ArrayList<Disciplinas>();   //Cria um lista e armazena em array
-	
-	
-	
-	
+
+	private List<Disciplinas> disciplinas = new ArrayList<Disciplinas>(); // Cria um lista e armazena em array
+
 	public void setDisciplinas(List<Disciplinas> disciplinas) {
 		this.disciplinas = disciplinas;
 	}
+
 	public List<Disciplinas> getDisciplinas() {
 		return disciplinas;
 	}
 
-	
-	
-	public Aluno() {  //Cria dados na memória - sendo um padrão Java
-		
+	public Aluno() { // Cria dados na memória - sendo um padrão Java
+
 	}
-	
-	//To string do objeto	
+
+	// To string do objeto
 
 	@Override
 	public String toString() {
@@ -47,31 +43,30 @@ public class Aluno {
 				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
 				+ serieMatriculado + "]";
 	}
-	
-	
-	public Aluno (String nomePadrao) {
+
+	public Aluno(String nomePadrao) {
 		nome = nomePadrao;
 	}
-	public Aluno (String nomePadrao, int idadePadrao){
+
+	public Aluno(String nomePadrao, int idadePadrao) {
 		nome = nomePadrao;
 		idade = idadePadrao;
 	}
-	
-	
-	
-	//Veremos os métodos setters e getters d objeto
-	//SET é para adicionar ou receber dados para os atributos.
-	//GET é para resgatar ou obter o valor do atributo.
-	
-	 public void setNome(String nome) {
-		this.nome = nome;     //this é para indicar a classe seguida do atributo. Assim é possível usar nome recebendo nome
-		
-	 }
-	 
-	 public String getNome() {
-		return nome;		 
-		
-	 }
+
+	//Métodos setters e getters d objeto
+	// SET é para adicionar ou receber dados para os atributos.
+	// GET é para resgatar ou obter o valor do atributo.
+
+	public void setNome(String nome) {
+		this.nome = nome; // this é para indicar a classe seguida do atributo. Assim é possível usar nome
+							// recebendo nome
+
+	}
+
+	public String getNome() {
+		return nome;
+
+	}
 
 	public int getIdade() {
 		return idade;
@@ -145,42 +140,37 @@ public class Aluno {
 		this.serieMatriculado = serieMatriculado;
 	}
 
-	
-	//Médoto que retorna a média do aluno
-	
+	// Médoto que retorna a média do aluno
+
 	public double getMediaNota() {
-		
-		double somaNotas = 0.0;
-				
-		for (Disciplinas disciplina :  disciplinas) {
+
+		double somaNotas = 0;
+
+		for (Disciplinas disciplina : disciplinas) {
 			somaNotas += disciplina.getNota();
 		}
-		
-		return somaNotas / disciplinas.size();   //.size já retorna a quantidade de disciplinas dinâmicas
+
+		return somaNotas / disciplinas.size(); // .size já retorna a quantidade de disciplinas dinâmicas
 	}
-	 
-	
-	
+
 	public boolean getAlunoAprovado() {
-		double media = this.getMediaNota();       //Método para retornar true ou false para aprovado
+		double media = this.getMediaNota(); // Método para retornar true ou false para aprovado
 		if (media >= 70) {
 			return true;
-		}else {
+		} else {
 			return false;
 		}
 	}
-	
+
 	public String getAlunoAprovado2() {
 		double media = this.getMediaNota();
-		if (media >=70) {
+		if (media >= 70) {
 			return "Aluno Aprovado!";
-		}else if (media >=50 && media<70) {
+		} else if (media >= 50 && media < 70) {
 			return "Aluno em recuperação";
-		}else {
+		} else {
 			return "Aluno reprovado";
 		}
 	}
-	 
+
 }
-
-

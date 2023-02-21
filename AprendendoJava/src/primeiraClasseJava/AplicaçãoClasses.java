@@ -30,7 +30,7 @@ public class AplicaçãoClasses {
 		Aluno aluno1 = new Aluno(); //criando o objeto aluno
 		
 		aluno1.setNome(nome);
-		aluno1.setIdade (Integer.valueOf(idade));  //precisa fazer a conversão de string para int usando método "integer"
+		aluno1.setIdade (Integer.valueOf(idade));           //precisa fazer a conversão de string para int usando método "integer"
 		aluno1.setDataNascimento(dataNascimento);
 		aluno1.setRegistroGeral(registroGeral);
 		aluno1.setNumeroCpf(numeroCpf);
@@ -38,31 +38,26 @@ public class AplicaçãoClasses {
 		aluno1.setNomePai(nomePai);
 		aluno1.setDataMatricula(dataMatricula);
 		aluno1.setSerieMatriculado(serieMatricula + "ª");
-		aluno1.setNomeEscola(nomeEscola);
+		aluno1.setNomeEscola(nomeEscola); 
 		
 		
-		Disciplinas disciplina1 = new Disciplinas();
-		disciplina1.setDisciplina("Banco de dados");
-		disciplina1.setNota(90);
+		for (int pos = 1; pos <= 4; pos++){
+			String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina "+pos+" ? ");
+			String notaDisciplina = JOptionPane.showInputDialog("Nota da disciplina "+pos+" ? ");
+			
+			Disciplinas disciplina = new Disciplinas();
+			disciplina.setDisciplina(nomeDisciplina);
+			disciplina.setNota(Double.valueOf(notaDisciplina));
+			
+			aluno1.getDisciplinas().add(disciplina);
+		}		
 		
-		Disciplinas disciplina2 = new Disciplinas();
-		disciplina2.setDisciplina("Matemática");
-		disciplina1.setNota(80);
-	
-		Disciplinas disciplina3 = new Disciplinas();
-		disciplina3.setDisciplina("Geografia");
-		disciplina3.setNota(97);
+		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina? ");
 		
-		Disciplinas disciplina4 = new Disciplinas();
-		disciplina4.setDisciplina("Java Web");
-		disciplina4.setNota(70);
-		
-		aluno1.getDisciplinas().add(disciplina1);
-		aluno1.getDisciplinas().add(disciplina2);
-		aluno1.getDisciplinas().add(disciplina3);
-		aluno1.getDisciplinas().add(disciplina4);
-		
-		
+		if (escolha == 0) {
+			String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina? 1, 2, 3 ou 4? ");
+			aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() - 1);   // valueOf indica a disciplina pra remover e o intValue chama o inteir refente a posição. o -1 é para alterar a posição de escolha começando o 1
+		}
 		
 		System.out.println(aluno1.toString());
 		System.out.println("A média do aluno é = " + aluno1.getMediaNota());
