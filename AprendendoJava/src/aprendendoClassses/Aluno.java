@@ -34,7 +34,7 @@ public class Aluno {
 
 	}
 
-	// To string do objeto
+	// To string do objeto aluno
 
 	@Override
 	public String toString() {
@@ -53,13 +53,12 @@ public class Aluno {
 		idade = idadePadrao;
 	}
 
-	//Métodos setters e getters d objeto
-	// SET é para adicionar ou receber dados para os atributos.
-	// GET é para resgatar ou obter o valor do atributo.
+	// Métodos setters e getters do objeto 
+	// SET é para adicionar ou receber dados de atributos.
+	// GET é para resgatar ou obter o valor de atributo.
 
 	public void setNome(String nome) {
-		this.nome = nome; // this é para indicar a classe seguida do atributo. Assim é possível usar nome
-							// recebendo nome
+		this.nome = nome; // this é para indicar o atributo que irá receber o parâmetro de mesmo nome.
 
 	}
 
@@ -150,7 +149,7 @@ public class Aluno {
 			somaNotas += disciplina.getNota();
 		}
 
-		return somaNotas / disciplinas.size(); // .size já retorna a quantidade de disciplinas dinâmicas
+		return somaNotas / disciplinas.size(); // .size já retorna a quantidade de disciplinas dinâmicas inseridas no método 'for' de entrada de disciplinas
 	}
 
 	public boolean getAlunoAprovado() {

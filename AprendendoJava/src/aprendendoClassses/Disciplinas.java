@@ -6,16 +6,13 @@ public class Disciplinas {
 
 	//Essa classe disciplina servirá para todas as instâncias de notas e matérias
 	
-	private double nota;
 	private String disciplina;
 
-	public double getNota() {
-		return nota;
-	}
+	
+	//Essa classe disciplina servirá para todas as instâncias de notas e matérias
+	
+	private double nota;
 
-	public void setNota(double nota) {
-		this.nota = nota;
-	}
 
 	public String getDisciplina() {
 		return disciplina;
@@ -23,6 +20,13 @@ public class Disciplinas {
 
 	public void setDisciplina(String disciplina) {
 		this.disciplina = disciplina;
+	}
+	public double getNota() {
+		return nota;
+	}
+
+	public void setNota(double nota) {
+		this.nota = nota;
 	}
 
 	// Equals e hashcode
