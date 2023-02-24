@@ -53,7 +53,8 @@ public class Disciplinas {
 
 	@Override
 	public String toString() {
-		return "Disciplinas [nota=" + nota + ", disciplina=" + disciplina + "]";
+		return "Disciplinas [disciplina=" + disciplina + ", nota =" + nota + "]";
+		
 	}
 
 }
