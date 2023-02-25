@@ -35,7 +35,8 @@ public class AplicaçãoClasses {
 			for (int qtd = 1; qtd <= 4; qtd++) {
 
 				String nome = JOptionPane.showInputDialog("Qual o nome do aluno " + qtd + " ?");
-
+				
+				/*
 				String idade = JOptionPane.showInputDialog("Qual a idade? ");
 				String dataNascimento = JOptionPane.showInputDialog("Qual a data de nascimento ");
 				String registroGeral = JOptionPane.showInputDialog("Informe o RG ");
@@ -44,12 +45,14 @@ public class AplicaçãoClasses {
 				String nomePai = JOptionPane.showInputDialog("Qual o nome do pai? ");
 				String dataMatricula = JOptionPane.showInputDialog("Qual a data de matrícula? ");
 				String serieMatricula = JOptionPane.showInputDialog("Qual série está matriculado? ");
-				String nomeEscola = JOptionPane.showInputDialog("Qual o nome da escola? ");
+				String nomeEscola = JOptionPane.showInputDialog("Qual o nome da escola? ");  
+				*/
 
 				Aluno aluno = new Aluno(); // criando o objeto aluno
 
 				aluno.setNome(nome);
-
+				
+				/*
 				aluno.setIdade(Integer.valueOf(idade)); // precisa fazer a conversão de String para int usando método "integer"
 				aluno.setDataNascimento(dataNascimento);
 				aluno.setRegistroGeral(registroGeral);
@@ -58,8 +61,9 @@ public class AplicaçãoClasses {
 				aluno.setNomePai(nomePai);
 				aluno.setDataMatricula(dataMatricula);
 				aluno.setSerieMatriculado(serieMatricula + "ª");
-				aluno.setNomeEscola(nomeEscola);
-
+				aluno.setNomeEscola(nomeEscola);  
+				 */
+				
 				for (int pos = 1; pos <= 3; pos++) {
 					String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina " + pos + " ? ");
 					String notaDisciplina = JOptionPane.showInputDialog("Nota da disciplina " + pos + " ? ");

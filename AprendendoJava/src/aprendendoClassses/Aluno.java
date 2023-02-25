@@ -8,21 +8,15 @@ import java.util.List;
 import contantes.StatusAluno;
 
 /*Classe/Objeto Aluno*/
+//classe filha (extends) de Pessoa
 
-public class Aluno {
+public class Aluno extends Pessoa {
 
 	/* Esses são os atributos do objeto aluno */
-	private String nome;
-	private int idade;
-	private String dataNascimento;
-	private String registroGeral;
-	private String numeroCpf;
-	private String nomeMae;
-	private String nomePai;
+	
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
-
 	private List<Disciplinas> disciplinas = new ArrayList<Disciplinas>(); // Cria um lista e armazena em array
 
 	public void setDisciplinas(List<Disciplinas> disciplinas) {
@@ -39,7 +33,8 @@ public class Aluno {
 
 	// To string do objeto aluno
 
-	@Override
+	@Override // o Overrride indentifica método sobrescrito. Um método que já existe
+	
 	public String toString() {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
@@ -48,7 +43,7 @@ public class Aluno {
 	}
 
 	public Aluno(String nomePadrao) {
-		nome = nomePadrao;
+		super.nome = nomePadrao;   //Super indica que vem da super classe Pessoa. Não necessariamente precisa o "super." antes da variável
 	}
 
 	public Aluno(String nomePadrao, int idadePadrao) {
@@ -176,5 +171,20 @@ public class Aluno {
 			return StatusAluno.REPROVADO;
 		}
 	}
+	
+	@Override
+	public boolean pessoaMarioIdade() {
+		
+		return idade >= 21;
+	}
 
+	public String msgMaiorIdade() {
+		return this.pessoaMarioIdade() ? "Aluno é maior de idade" : "Aluno é menor de idade";
+	}
+
+	@Override
+	public double salario() {
+		
+		return 1500.9;
+	}
 }
