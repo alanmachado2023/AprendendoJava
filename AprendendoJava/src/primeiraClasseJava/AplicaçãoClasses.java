@@ -9,8 +9,12 @@ import javax.swing.JOptionPane;
 import javax.swing.plaf.synth.SynthOptionPaneUI;
 
 import aprendendoClassses.Aluno;
+import aprendendoClassses.Diretor;
 import aprendendoClassses.Disciplinas;
+import aprendendoClassses.Secretario;
+import classesAuxiliares.FuncaoAutenticacao;
 import contantes.StatusAluno;
+import cursojava.interfaces.PermitirAcesso;
 
 public class AplicaçãoClasses {
 
@@ -22,13 +26,13 @@ public class AplicaçãoClasses {
 		String login = JOptionPane.showInputDialog("Digite o login: ");
 		String senha = JOptionPane.showInputDialog("Digite a senha: ");
 		
+				
 		
-
-		if (login.equals("admin") && senha.equals("admin")) {
+		if (new FuncaoAutenticacao(new Diretor(login, senha)).autenticar()) {   //um new função de autenticação recebendo um 'new Secretario' e valida a autenticação do login e senha, caso True
 
 			
 			List<Aluno> alunos = new ArrayList<Aluno>();
-
+			
 			// é uma lista que dentro na qual há uma chave que identifica uma sequencia de valores
 			HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 
@@ -124,6 +128,8 @@ public class AplicaçãoClasses {
 				System.out.println("Aluno " + aluno.getNome() + ": Resultado: " + aluno.getAlunoAprovado2()
 						+ " com média = " + aluno.getMediaNota());
 			}
+		}else {
+			JOptionPane.showMessageDialog(null, "Acesso não permitido");
 		}
 	}
 

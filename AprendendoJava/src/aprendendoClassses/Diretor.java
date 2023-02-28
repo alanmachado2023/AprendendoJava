@@ -1,11 +1,25 @@
 package aprendendoClassses;
 
+import cursojava.interfaces.PermitirAcesso;
+
 //classe filha (extends) de Pessoa
-public class Diretor extends Pessoa{
+public class Diretor extends Pessoa implements PermitirAcesso{
 	
 	private String registroEducacao;
 	private int tempoDirecao;
 	private String titulacao;
+	
+	private String login;
+	private String senha;
+	
+	public Diretor(String login, String senha) {
+		this.login = login;
+		this.senha = senha;
+	}
+	
+	public Diretor() {  //Deixar um atributo padrão (sem parametros) para não quebrar outros códigos possíveis
+		
+	}
 	
 	
 	public String getRegistroEducacao() {
@@ -41,6 +55,16 @@ public class Diretor extends Pessoa{
 		return 3500.78;
 	}
 	
-	
-
+	@Override
+	public boolean autenticar(String login, String senha) { //método criado pela validação de 'PermitirAcesso'
+		this.login = login;			//esse método está implementado mas não está sendo utilizado...
+		this.senha = senha;  					//...é uma forma alternativa.
+		return autenticar();       //Está chamando o método autenticar de baixo
+	}
+	@Override
+	public boolean autenticar() {
+		
+		return login.equals("diretorlogin") && senha.equals("diretorsenha");
+	}
 }
+
