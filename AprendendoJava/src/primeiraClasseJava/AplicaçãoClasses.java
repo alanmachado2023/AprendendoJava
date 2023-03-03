@@ -21,6 +21,7 @@ public class AplicaçãoClasses {
 	// Main é um método auto executável em Java
 	public static void main(String[] args) {
 		
+		try { //faz um "debug"+
 		
 
 		String login = JOptionPane.showInputDialog("Digite o login: ");
@@ -131,6 +132,39 @@ public class AplicaçãoClasses {
 		}else {
 			JOptionPane.showMessageDialog(null, "Acesso não permitido");
 		}
-	}
+	
+		
+		//bloco de excecões/erros
+		
+		}catch (Exception e) {
+			
+			StringBuilder saida = new StringBuilder();
+			
+			e.printStackTrace(); //imprime o erro no console
+			
+			//mensagem do erro/causa do erro
+			System.out.println("Mensagem: " + e.getMessage());
+			
+			for (int pos = 0; pos < e.getStackTrace().length; pos++) {
+				
+							
+				saida.append("\n Classe de erro: " + e.getStackTrace()[pos].getClassName()); //append adiciona o erro a lista de erros
+				saida.append("\n Método de erro: " + e.getStackTrace()[pos].getMethodName());
+				saida.append("\n Linha de erro: " + e.getStackTrace()[pos].getLineNumber());
+				saida.append("\n Class: " + e.getClass().getName());
+				
+				}
+			
+				JOptionPane.showMessageDialog(null, "Erro no processamento de notas" + saida.toString());
+			
+			
+		   	}finally { //sempre será executado ocorrendo erros ou não | usada para fechar sessões, por exemplo, em BD.
+				JOptionPane.showMessageDialog(null, "Obrigado por testar meu código");
+			}
+			
+			
+		}
 
 }
+
+
