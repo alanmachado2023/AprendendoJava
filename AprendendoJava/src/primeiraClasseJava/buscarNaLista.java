@@ -50,7 +50,7 @@ public class buscarNaLista {
 
 				Disciplinas disciplina = new Disciplinas();
 				disciplina.setDisciplina(nomeDisciplina);
-				disciplina.setNota(Double.valueOf(notaDisciplina));
+			//	disciplina.setNota(Double.valueOf(notaDisciplina));   Ignorado por alteração do objeto
 
 				aluno.getDisciplinas().add(disciplina);
 			}
@@ -82,7 +82,7 @@ public class buscarNaLista {
 					
 					Disciplinas disciplinas = new Disciplinas();
 					disciplinas.setDisciplina("Matemática");
-					disciplinas.setNota(96);
+				//	disciplinas.setNota(96);    Ignorado por alteração do objeto
 					
 					trocar.getDisciplinas().add(disciplinas);
 					

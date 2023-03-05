@@ -1,5 +1,6 @@
 package aprendendoClassses;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class Disciplinas {
@@ -11,30 +12,52 @@ public class Disciplinas {
 	
 	//Essa classe disciplina servirá para todas as instâncias de notas e matérias
 	
-	private double nota;
+			private double[] nota = new double[4];
+	
+	
+				
+	public double getMediaNotas() {
+		
+		double somaTotal = 0;
+		
+		for (int pos = 0; pos < nota.length; pos++) {
+			somaTotal += nota[pos];
+		}
+		return somaTotal / 4;
+	}
+			
+			
+	public double[] getNota() {
+				return nota;
+			}
+
+
+			public void setNota(double[] nota) {
+				this.nota = nota;
+			}
+
+
+	public void setDisciplina(String disciplina) {
+				this.disciplina = disciplina;
+			}
 
 
 	public String getDisciplina() {
 		return disciplina;
 	}
-
-	public void setDisciplina(String disciplina) {
-		this.disciplina = disciplina;
-	}
-	public double getNota() {
-		return nota;
-	}
-
-	public void setNota(double nota) {
-		this.nota = nota;
-	}
+	
 
 	// Equals e hashcode
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(disciplina, nota);
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(nota);
+		result = prime * result + Objects.hash(disciplina);
+		return result;
 	}
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -45,8 +68,7 @@ public class Disciplinas {
 		if (getClass() != obj.getClass())
 			return false;
 		Disciplinas other = (Disciplinas) obj;
-		return Objects.equals(disciplina, other.disciplina)
-				&& Double.doubleToLongBits(nota) == Double.doubleToLongBits(other.nota);
+		return Objects.equals(disciplina, other.disciplina) && Arrays.equals(nota, other.nota);
 	}
 
 	// toString
@@ -56,5 +78,8 @@ public class Disciplinas {
 		return "Disciplinas [disciplina=" + disciplina + ", nota =" + nota + "]";
 		
 	}
+
+
+	
 
 }

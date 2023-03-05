@@ -14,7 +14,7 @@ public class Aluno extends Pessoa {
 
 	/* Esses são os atributos do objeto aluno */
 	
-	private String dataMatricula;
+	private String dataMatricula; 
 	private String nomeEscola;
 	private String serieMatriculado;
 	private List<Disciplinas> disciplinas = new ArrayList<Disciplinas>(); // Cria um lista e armazena em array
@@ -144,7 +144,7 @@ public class Aluno extends Pessoa {
 		double somaNotas = 0;
 
 		for (Disciplinas disciplina : disciplinas) {
-			somaNotas += disciplina.getNota();
+			somaNotas += disciplina.getMediaNotas();
 		}
 
 		return somaNotas / disciplinas.size(); // .size já retorna a quantidade de disciplinas dinâmicas inseridas no método 'for' de entrada de disciplinas

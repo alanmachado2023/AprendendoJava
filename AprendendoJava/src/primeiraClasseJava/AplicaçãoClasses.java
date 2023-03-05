@@ -75,7 +75,7 @@ public class AplicaçãoClasses {
 
 					Disciplinas disciplina = new Disciplinas();
 					disciplina.setDisciplina(nomeDisciplina);
-					disciplina.setNota(Double.valueOf(notaDisciplina));
+				//	disciplina.setNota(Double.valueOf(notaDisciplina));   - ignorado por alteração do objeto
 
 					aluno.getDisciplinas().add(disciplina);
 				}
