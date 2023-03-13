@@ -1,3 +1,4 @@
+/*
 package threads;
 
 import java.awt.BorderLayout;
@@ -20,23 +21,63 @@ public class TelaTimeThread extends JDialog{  //.swing. Swing é um framwork par
 	
 	
 	private JPanel jPanel = new JPanel(new GridBagLayout());  //JPanel(layoutManager) para criar um painel de componentes
-	private JLabel descricaoHora = new JLabel("Nome");
+	private JLabel descricaoHora = new JLabel("Data/Hora Thread 1");
 	private JTextField mostraTempo = new JTextField(); //cria o mostrador de tempo
 	
-	private JLabel descricaoHora2 = new JLabel("Email");
+	private JLabel descricaoHora2 = new JLabel("Data/Hora Thread 2");
 	private JTextField mostraTempo2 = new JTextField(); //cria o mostrador de tempo
 	
-	private JButton jButton = new JButton("Gerar Lote");
+	private JButton jButton = new JButton("Start");
 	private JButton jButton2 = new JButton("Stop");
 	
+	private Runnable thread1 = new Runnable() {  // Interface de execução com o run. Cria um runnable para thread1
+		
+		@Override
+		public void run() {  //aqui é o método que faz correr o relógio na tela
+			
+			while(true) {
+				mostraTempo.setText(new SimpleDateFormat("'Dia: 'dd/MM/yyyy 'às: 'hh'h'mm'm'ss").format(Calendar.getInstance().getTime())); //chama o formato desejado com o text. formata com o format par ao formato específico
+				try {
+					Thread.sleep(1000);   //controla o tempo de run em 1 segundo.
+				} catch (InterruptedException e) {
+					
+					e.printStackTrace();
+				}
+			}
+				
+		}
+	};
 	
-	private ImplementacaoFilaThread fila = new ImplementacaoFilaThread();
+	
+	private Runnable thread2 = new Runnable() {  // Interface de execução com o run. Cria um runnable para thread1
+		
+		@Override
+		public void run() {
+			
+			while(true) {
+				mostraTempo2.setText(new SimpleDateFormat("dd.MM.yyyy '-' hh:mm:ss").format(Calendar.getInstance().getTime())); //chama o formato desejado com o text. formata com o format par ao formato específico
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					
+					e.printStackTrace();
+				}
+			}
+				
+		}
+	};
+	
+	
+	
+	
+	private Thread thread1Time; //instancia o objeto thread1Time par ao botão start
+	private Thread thread2Time; 
 	
 	
 	
 	public TelaTimeThread() {  //executa o que estiver detnro no momento da abertura ou execução
 		
-		setTitle("Tela de Time com Threads");  //Define um título para a janela
+		setTitle("Data/hora com Threads");  //Define um título para a janela
 		setSize(new Dimension(240, 240));  //configura um tamanho para a janela
 		setLocationRelativeTo(null);  //centraliza com base em algum compontente, como não tem, coloca null
 		setResizable(false); // bloqueia a alteração de tamanho da tela pelo usuário
@@ -56,6 +97,7 @@ public class TelaTimeThread extends JDialog{  //.swing. Swing é um framwork par
 		
 		mostraTempo.setPreferredSize(new Dimension(200, 25));  //define um tamanho para o mostrador de tempo
 		gridBagConstraints.gridy ++;  //incrementa o y para mudar a posição no layout
+		mostraTempo.setEditable(false);
 		jPanel.add(mostraTempo, gridBagConstraints); //adiciona o mostrador para o layout
 		
 		
@@ -66,6 +108,7 @@ public class TelaTimeThread extends JDialog{  //.swing. Swing é um framwork par
 		
 		mostraTempo2.setPreferredSize(new Dimension(200, 25));
 		gridBagConstraints.gridy ++;
+		mostraTempo2.setEditable(false);
 		jPanel.add(mostraTempo2, gridBagConstraints);
 		
 		
@@ -86,20 +129,16 @@ public class TelaTimeThread extends JDialog{  //.swing. Swing é um framwork par
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (fila == null) {
-					fila = new ImplementacaoFilaThread();
-					fila.start();
-				}
-								
-				for (int qtd = 0; qtd < 100; qtd++) {    //simula 100 envios em massa
 				
-				ObjetoFilaThread filaThread = new ObjetoFilaThread();
-				filaThread.setNome(mostraTempo.getText());
-				filaThread.setEmail(mostraTempo2.getText());
+				thread1Time = new Thread(thread1);    //cria o objeto thread1Time recebendo thread1, que tem o run
+				thread1Time.start();  //executa o botão start.
 				
-				fila.add(filaThread);
+				thread2Time = new Thread(thread2);
+				thread2Time.start();
 				
-				}
+				jButton.setEnabled(false); //Desabilita o start ao clicar nele e iniciar na a contagem na tela
+				jButton2.setEnabled(true); //habilita o Stop ao clicar em start
+			
 			}
 		});
 		
@@ -108,13 +147,17 @@ public class TelaTimeThread extends JDialog{  //.swing. Swing é um framwork par
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				fila.stop();
-				fila = null;				
 				
+				thread1Time.stop(); //executa o botão stop
+				
+				thread2Time.stop();
+				
+				jButton.setEnabled(true); //reabilita o start ao clicar em stop
+				jButton2.setEnabled(false); 
 			}
 		});
 		
-		fila.start();
+		jButton2.setEnabled(false); //desativa o botão de stop ante de apertar o start
 		
 		add(jPanel, BorderLayout.WEST);  //para mostra o painel e ajusta o posicionamento a esquerda
 		
@@ -125,3 +168,5 @@ public class TelaTimeThread extends JDialog{  //.swing. Swing é um framwork par
 	
 
 }
+
+*/
